@@ -19,8 +19,8 @@ URL:		http://search.cpan.org/dist/Sub-Exporter/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Package::Generator)
 BuildRequires:	perl-Data-OptList >= 0.1
+BuildRequires:	perl-Package-Generator
 BuildRequires:	perl-Params-Util >= 0.14
 BuildRequires:	perl-Sub-Install >= 0.92
 %endif
@@ -56,13 +56,16 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# exist as man
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Sub/Exporter/*.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/Sub/*.pm
+%{perl_vendorlib}/Sub/Exporter.pm
 %dir %{perl_vendorlib}/Sub/Exporter
 %{perl_vendorlib}/Sub/Exporter/*.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/Sub::Exporter*.3pm*
