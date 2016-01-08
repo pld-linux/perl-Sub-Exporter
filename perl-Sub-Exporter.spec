@@ -8,18 +8,19 @@
 Summary:	Sub::Exporter - a sophisticated exporter for custom-built routines
 Summary(pl.UTF-8):	Sub::Exporter - wymyślny eksporter dla własnych funkcji
 Name:		perl-Sub-Exporter
-Version:	0.986
+Version:	0.987
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Sub/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	bdfa41103f82ab8611af61fceed1271e
+# Source0-md5:	5332d269a7ba387773fcd140b72a0ed2
 URL:		http://search.cpan.org/dist/Sub-Exporter/
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.30
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-Data-OptList >= 0.1
+BuildRequires:	perl-Data-OptList >= 0.100
 BuildRequires:	perl-Package-Generator
 BuildRequires:	perl-Params-Util >= 0.14
 BuildRequires:	perl-Sub-Install >= 0.92
