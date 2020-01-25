@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Sub
 %define	pnam	Exporter
 Summary:	Sub::Exporter - a sophisticated exporter for custom-built routines
